@@ -1,0 +1,439 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #201f1f;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  height: 3vh;
+}
+
+.logo {
+  transition: transform 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.1);
+}
+
+.nav-list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 1rem;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: #ececec;
+}
+
+.abrir-menu,
+.cerrar-menu {
+  display: block;
+  border: 0;
+
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.abrir-menu {
+  color: #f8f3f3;
+  font-size: 2rem;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.cerrar-menu {
+  color: #ececec;
+  margin-top: 4.2vh;
+  font-size: 1.5rem;
+}
+
+.nav {
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  gap: 1rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #1c1c1c;
+  padding: 2rem;
+  box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  right: -100%; /* El menú comienza fuera de la pantalla */
+  transition: right 0.3s ease, opacity 0.3s ease;
+}
+
+.nav.visible {
+  right: 0; /* El menú se desliza dentro de la pantalla */
+  opacity: 1;
+  visibility: visible;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  visibility: hidden;
+  opacity: 0;
+  z-index: 99;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+footer {
+  background-color: #000000;
+  color: white;
+  padding-top: 2vh;
+  width: 100%;
+}
+
+footer p {
+  margin-bottom: 0;
+}
+
+.footer-info {
+  border-bottom: 0.5px solid white;
+}
+
+.footer-info h5 {
+  margin-top: 1vh;
+  text-align: center;
+}
+
+.footer-info a {
+  text-decoration: none;
+  color: white;
+}
+
+.footer-info ul {
+  padding-left: 0 !important;
+}
+
+.redes-sociales {
+  text-decoration: none;
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  gap: 10vw;
+  margin-bottom: 2vh;
+}
+
+.redes-sociales i {
+  font-size: 5vh;
+}
+
+.copyright p {
+  text-align: center;
+  justify-content: center;
+  padding: 2vh 2vh;
+}
+
+.lista-footer {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  font-size: 0.9rem;
+  display: flex;
+  gap: 5vw;
+}
+
+.missions-section {
+  position: relative;
+  height: 100vh;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0)
+    ),
+    url("/assets/gateway-with-earth-in-background.webp");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding-left: 5vw;
+  color: white;
+}
+
+.missions-text {
+  max-width: 600px;
+  z-index: 2;
+}
+
+.missions-text h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.missions-text p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.mission-info {
+  display: flex;
+  flex-direction: column;
+
+  padding: 4vh 5vw;
+  align-items: center;
+  background-color: #ffffff;
+  color: #000;
+}
+
+.text-content {
+  max-width: 600px;
+}
+
+.text-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.text-content h4 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.text-content p {
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.mission-link {
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+  margin-top: 1rem;
+}
+
+.image-content figure {
+  margin: 0;
+  text-align: center;
+}
+
+.image-content img {
+  width: 45vw;
+  height: auto;
+}
+
+.image-content figcaption {
+  font-size: 0.9rem;
+  color: #444;
+  margin-top: 0.5rem;
+}
+
+.section-divider {
+  text-align: center;
+  margin: 5vh 0;
+  font-size: 1.5rem;
+  color: #ccc;
+}
+
+.alt-bg {
+  background-color: #f9f9f9;
+}
+
+@media screen and (min-width: 375px) {
+  .logo {
+    max-width: 20vw;
+  }
+}
+
+@media screen and (min-width: 424px) {
+  .logo {
+    max-width: 18vw;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .logo {
+    max-width: 12vw;
+  }
+
+  header {
+    height: 10vh;
+  }
+
+  .abrir-menu {
+    margin-right: 2vh;
+  }
+
+  header button,
+  i {
+    font-size: 2rem;
+  }
+
+  .nav.visible {
+    width: 35vw;
+  }
+
+  .nav-list {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 992px) {
+  header {
+    height: 10vh;
+    font-family: "Poppins", sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0); /* Fondo semi-transparente */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    color: white;
+    transition: 0.5s;
+  }
+
+  .logo {
+    width: 10vw;
+  }
+
+  header li {
+    font-size: 2rem;
+    transition: 0.5s;
+  }
+
+  .nav ul {
+    margin-bottom: 0.5rem !important;
+    padding-left: 1.8rem !important;
+  }
+
+  .nav-list {
+    align-items: center;
+  }
+
+  .nav-list li a {
+    transition: color 0.4s ease;
+  }
+
+  .nav-list li a:hover {
+    color: #0b5562; /* Celeste al pasar el mouse */
+  }
+
+  .abrir-menu,
+  .cerrar-menu {
+    display: none;
+  }
+
+  .nav {
+    opacity: 1;
+    visibility: visible;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: none;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .nav-list li a {
+    color: #ffffff;
+    font-size: 1.3rem;
+  }
+
+  .bi {
+    font-size: 2rem;
+  }
+
+  .mission-info {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .text-content {
+    flex: 1;
+    padding-right: 2rem;
+  }
+
+  .image-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-left: 6vw;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .logo {
+    width: 9vw;
+  }
+
+  .abrir-menu,
+  .cerrar-menu {
+    display: none;
+  }
+
+  .nav {
+    opacity: 1;
+    visibility: visible;
+    position: static;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: none;
+    background-color: transparent;
+    padding: 0;
+  }
+
+  .nav-list {
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .nav-list li a {
+    color: #ffffff;
+  }
+
+  ul {
+    padding-left: 1.5rem !important;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .logo {
+    width: 7vw;
+    margin-left: 1vw;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .logo {
+    width: 4vw;
+  }
+}
