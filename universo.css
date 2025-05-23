@@ -16,6 +16,21 @@ header {
   height: 3vh;
 }
 
+h1,
+h2 {
+  font-family: "Orbitron", sans-serif !important;
+}
+
+h3,
+h5,
+a {
+  font-family: "Exo 2", sans-serif !important;
+}
+
+p {
+  font-family: "Open Sans", sans-serif !important;
+}
+
 .logo {
   transition: transform 0.3s;
 }
@@ -237,11 +252,6 @@ footer p {
   text-align: center;
 }
 
-.image-content img {
-  width: 45vw;
-  height: auto;
-}
-
 .image-content figcaption {
   font-size: 0.9rem;
   color: #444;
@@ -295,19 +305,48 @@ footer p {
 
 @media screen and (min-width: 375px) {
   .logo {
-    max-width: 20vw;
+    max-width: 16vw;
+  }
+
+  .lista-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5vh 0;
+  }
+
+  .lista-footer li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .image-content img {
+    width: 60vw;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 1.8rem !important;
+  }
+
+  p {
+    font-size: 0.9rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
   }
 }
 
 @media screen and (min-width: 424px) {
   .logo {
-    max-width: 18vw;
+    max-width: 14vw;
   }
 }
 
 @media screen and (min-width: 768px) {
   .logo {
-    max-width: 12vw;
+    max-width: 8vw;
   }
 
   header {
@@ -330,6 +369,29 @@ footer p {
   .nav-list {
     font-size: 1.5rem;
   }
+
+  .lista-footer {
+    flex-direction: row;
+    justify-content: center;
+    gap: 5vw;
+  }
+
+  .lista-footer li {
+    width: auto;
+    text-align: initial;
+  }
+
+  h1 {
+    font-size: 2.5rem !important;
+  }
+
+  p {
+    font-size: 1.1rem !important;
+  }
+
+  h2 {
+    font-size: 1.8rem !important;
+  }
 }
 
 @media (min-width: 992px) {
@@ -351,7 +413,7 @@ footer p {
   }
 
   .logo {
-    width: 10vw;
+    width: 6vw;
   }
 
   header li {
@@ -422,11 +484,16 @@ footer p {
     flex-direction: column;
     padding-left: 6vw;
   }
+
+  .image-content img {
+    width: 45vw;
+    height: auto;
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .logo {
-    width: 9vw;
+    width: 5.5vw;
   }
 
   .abrir-menu,
@@ -461,13 +528,13 @@ footer p {
 
 @media screen and (min-width: 1280px) {
   .logo {
-    width: 7vw;
+    width: 5.5vw;
     margin-left: 1vw;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .logo {
-    width: 4vw;
+    width: 4.5vw;
   }
 }

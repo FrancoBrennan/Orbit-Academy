@@ -183,7 +183,7 @@ footer p {
       rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0)
     ),
-    url("/assets/gateway-with-earth-in-background.webp");
+    url("assets/sistema\ solar.jpg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -212,6 +212,7 @@ footer p {
 .mission-info {
   display: flex;
   flex-direction: column;
+
   padding: 4vh 5vw;
   align-items: center;
   background-color: #ffffff;
@@ -251,11 +252,6 @@ footer p {
   text-align: center;
 }
 
-.image-content img {
-  width: 45vw;
-  height: auto;
-}
-
 .image-content figcaption {
   font-size: 0.9rem;
   color: #444;
@@ -273,12 +269,145 @@ footer p {
   background-color: #f9f9f9;
 }
 
-#apollo11 {
-  margin-top: 6vh;
+.video-section {
+  background-color: #f0f4f8;
+  padding: 6vh 5vw 4vh;
+  text-align: center;
 }
 
-#iss {
-  padding-bottom: 10vh;
+.video-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.video-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.video-container p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.video-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+/* === Hero Section === */
+.solar-hero {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3)),
+    url("/assets/sistema-solar-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  padding: 10vh 5vw;
+  text-align: center;
+}
+
+.solar-hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.solar-hero p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* === Esquema visual === */
+.solar-scheme {
+  text-align: center;
+  padding: 5vh 5vw;
+}
+
+.solar-scheme-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #5298d3;
+  margin-bottom: 0.5rem;
+}
+
+.solar-scheme-text {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* === Grilla de planetas === */
+.planet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  padding: 5vh 5vw;
+}
+
+.planet-card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.planet-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.planet-card h3 {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  color: #5298d3;
+}
+
+.planet-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+.planet-section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #5298d3;
+  margin-top: 6vh;
+  margin-bottom: 2vh;
+  margin-left: 4vw;
+}
+
+.planet-card img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.alt-bg {
+  background-color: #f9f9f9;
+}
+
+.moon-section {
+  margin: 7vh 0;
+}
+
+.star-section {
+  margin-top: 7vh;
 }
 
 @media screen and (min-width: 375px) {
@@ -296,6 +425,17 @@ footer p {
   .lista-footer li {
     width: 100%;
     text-align: center;
+  }
+
+  .image-content img {
+    width: 70vw;
+    height: auto;
+    padding-top: 5vh;
+  }
+
+  .solar-scheme img {
+    width: 80vw;
+    border-radius: 10px;
   }
 
   h1 {
@@ -456,6 +596,16 @@ footer p {
     display: flex;
     flex-direction: column;
     padding-left: 6vw;
+  }
+
+  .image-content img {
+    width: 45vw;
+    height: auto;
+    padding-top: 0;
+  }
+
+  .solar-scheme img {
+    width: 60vw;
   }
 }
 

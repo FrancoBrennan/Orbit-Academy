@@ -16,6 +16,22 @@ header {
   height: 3vh;
 }
 
+h1,
+h2 {
+  font-family: "Orbitron", sans-serif !important;
+}
+
+h3,
+h5,
+a {
+  font-family: "Exo 2", sans-serif !important;
+}
+
+body,
+p {
+  font-family: "Open Sans", sans-serif !important;
+}
+
 .logo {
   transition: transform 0.3s;
 }
@@ -117,6 +133,7 @@ header {
 .categorias h2 {
   text-align: center;
   margin-top: 5vh;
+  font-size: 2rem;
 }
 
 .categories-container {
@@ -517,30 +534,53 @@ footer p {
 @media screen and (min-width: 375px) {
   #carouselExampleAutoplaying .carousel-item img {
     width: 100%;
-    height: 22vh;
+    height: 45vh;
     object-fit: cover;
   }
 
   .logo {
-    max-width: 20vw;
+    max-width: 16vw;
+  }
+
+  .nasa-missions h2 {
+    font-size: 1.5rem;
+    margin-top: 5vh;
+    margin-bottom: 6vh;
+    margin-left: 7vw;
+  }
+
+  .categorias h2 {
+    font-size: 1.5rem;
+  }
+
+  .lista-footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.5vh 0;
+  }
+
+  .lista-footer li {
+    width: 100%;
+    text-align: center;
   }
 }
 
 @media screen and (min-width: 424px) {
   #carouselExampleAutoplaying .carousel-item img {
     width: 100%;
-    height: 25vh;
+    height: 50vh;
     object-fit: cover;
   }
 
   .logo {
-    max-width: 18vw;
+    max-width: 14vw;
   }
 }
 
 @media screen and (min-width: 768px) {
   .logo {
-    max-width: 12vw;
+    max-width: 8vw;
   }
 
   header {
@@ -562,7 +602,7 @@ footer p {
 
   #carouselExampleAutoplaying .carousel-item img {
     width: 100%;
-    height: 45vh;
+    height: 100vh;
     object-fit: cover;
   }
 
@@ -648,6 +688,25 @@ footer p {
     font-size: 14px;
     height: 22px;
   }
+
+  .lista-footer {
+    flex-direction: row;
+    justify-content: center;
+    gap: 5vw;
+  }
+
+  .lista-footer li {
+    width: auto;
+    text-align: initial;
+  }
+
+  .nasa-missions h2 {
+    font-size: 2rem;
+  }
+
+  .categorias h2 {
+    font-size: 2rem;
+  }
 }
 
 @media (min-width: 992px) {
@@ -669,7 +728,7 @@ footer p {
   }
 
   .logo {
-    width: 10vw;
+    width: 6vw;
   }
 
   header li {
@@ -695,7 +754,7 @@ footer p {
   }
 
   #carouselExampleAutoplaying .carousel-item img {
-    height: 60vh;
+    height: 100vh;
   }
 
   .nav-list {
@@ -809,11 +868,11 @@ footer p {
 
 @media screen and (min-width: 1024px) {
   .logo {
-    width: 9vw;
+    width: 5.5vw;
   }
 
   #carouselExampleAutoplaying .carousel-item img {
-    height: 62vh;
+    height: 100vh;
   }
 
   .abrir-menu,
@@ -848,22 +907,26 @@ footer p {
   ul {
     padding-left: 1.5rem !important;
   }
+
+  .mission-card {
+    max-width: calc(50% - 20px);
+  }
 }
 
 @media screen and (min-width: 1280px) {
   .logo {
-    width: 7vw;
+    width: 5vw;
     margin-left: 1vw;
   }
 
   #carouselExampleAutoplaying .carousel-item img {
-    height: 75vh;
+    height: 100vh;
   }
 }
 
 @media screen and (min-width: 1440px) {
   .logo {
-    width: 4vw;
+    width: 4.5vw;
   }
 
   #carouselExampleAutoplaying .carousel-item img {
@@ -873,5 +936,9 @@ footer p {
   .consultas-container {
     width: 90vw;
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .mission-card {
+    max-width: 22%;
   }
 }
