@@ -4,6 +4,9 @@
 
 Este proyecto consiste en una página web educativa diseñada con fines didácticos, desarrollada como trabajo práctico final de la materia **Sistemas de Información Multimedial (SIM)**.
 
+🔗 **Podés ver el sitio en línea acá:**  
+👉 [https://orbitacademy.netlify.app/](https://orbitacademy.netlify.app/)
+
 ## 🎯 Objetivo
 
 El objetivo fue aplicar conocimientos de diseño y desarrollo web utilizando tecnologías vistas en clase, tales como:
