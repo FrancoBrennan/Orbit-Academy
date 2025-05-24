@@ -1,81 +1,73 @@
-let correctCount = 0;
-let answeredCount = 0;
-let totalQuestions = 0;
-let resultButton;
-
 document.addEventListener("DOMContentLoaded", () => {
-  const questions = document.querySelectorAll(".trivia-question");
-  totalQuestions = questions.length;
+  const draggables = document.querySelectorAll(".draggable");
+  const dropzones = document.querySelectorAll(".dropzone");
+  const checkBtn = document.querySelector(".check-btn");
 
-  // Crear botón de resultados (inicialmente oculto)
-  resultButton = document.createElement("button");
-  resultButton.textContent = "Ver resultados";
-  resultButton.className = "show-score-btn";
-  resultButton.style.display = "none";
-  resultButton.onclick = showScore;
-  document.querySelector(".space-trivia").appendChild(resultButton);
-});
+  let dragged = null;
 
-function checkAnswer(element, isCorrect) {
-  const feedback = element.parentElement.nextElementSibling;
-  const options = element.parentElement.querySelectorAll("li");
-
-  if (feedback.textContent !== "") return;
-
-  options.forEach((opt) => {
-    opt.style.pointerEvents = "none";
-    opt.style.backgroundColor = "#fff";
+  // Iniciar drag
+  draggables.forEach((item) => {
+    item.addEventListener("dragstart", () => {
+      dragged = item;
+    });
   });
 
-  element.style.backgroundColor = isCorrect ? "#c8f7c5" : "#f7c5c5";
-  feedback.textContent = isCorrect ? "¡Correcto!" : "Incorrecto.";
-
-  if (isCorrect) correctCount++;
-  answeredCount++;
-
-  if (answeredCount === totalQuestions) {
-    resultButton.style.display = "inline-block";
-  }
-}
-
-function showScore() {
-  const resultado = document.createElement("p");
-  resultado.className = "trivia-score";
-  resultado.innerHTML = `Respondiste correctamente <strong>${correctCount}</strong> de <strong>${totalQuestions}</strong> preguntas.`;
-
-  resultButton.replaceWith(resultado);
-
-  const resetBtn = document.createElement("button");
-  resetBtn.textContent = "Volver a intentar";
-  resetBtn.className = "reset-btn";
-  resetBtn.onclick = resetTrivia;
-  document.querySelector(".space-trivia").appendChild(resetBtn);
-}
-
-function resetTrivia() {
-  correctCount = 0;
-  answeredCount = 0;
-
-  // Restaurar cada pregunta
-  const questions = document.querySelectorAll(".trivia-question");
-  questions.forEach((q) => {
-    const options = q.querySelectorAll("li");
-    const feedback = q.querySelector(".trivia-feedback");
-
-    options.forEach((opt) => {
-      opt.style.pointerEvents = "auto";
-      opt.style.backgroundColor = "#fff";
+  // Permitir soltar
+  dropzones.forEach((zone) => {
+    zone.addEventListener("dragover", (e) => {
+      e.preventDefault();
     });
 
-    feedback.textContent = "";
+    zone.addEventListener("drop", () => {
+      if (dragged) {
+        // Restaurar solo el texto original
+        const label = zone.querySelector(".drop-label");
+        zone.innerHTML = label ? label.outerHTML : "";
+        zone.appendChild(dragged);
+
+        checkIfComplete();
+      }
+    });
   });
 
-  // Eliminar resultado y botón de reinicio
-  document.querySelector(".trivia-score")?.remove();
-  document.querySelector(".reset-btn")?.remove();
+  // Verificar si todas las zonas están ocupadas
+  function checkIfComplete() {
+    const filled = Array.from(dropzones).every((zone) =>
+      zone.querySelector(".draggable")
+    );
+    if (filled) {
+      checkBtn.style.display = "inline-block";
+    } else {
+      checkBtn.style.display = "none";
+    }
+  }
 
-  // Volver a mostrar botón de resultado
-  resultButton.textContent = "Ver resultados";
-  resultButton.style.display = "none";
-  document.querySelector(".space-trivia").appendChild(resultButton);
-}
+  // Evaluar respuestas
+  checkBtn.addEventListener("click", () => {
+    dropzones.forEach((zone) => {
+      const correct = zone.getAttribute("data-correct");
+      const selected = zone.querySelector(".draggable");
+
+      if (selected?.getAttribute("data-planet") === correct) {
+        zone.classList.add("correct");
+        zone.classList.remove("incorrect");
+      } else {
+        zone.classList.add("incorrect");
+        zone.classList.remove("correct");
+      }
+    });
+  });
+
+  const resetBtn = document.querySelector(".reset-btn");
+
+  resetBtn.addEventListener("click", () => {
+    dropzones.forEach((zone) => {
+      const label = zone.querySelector(".drop-label");
+      zone.innerHTML = label ? label.outerHTML : "";
+      zone.classList.remove("correct", "incorrect");
+    });
+
+    document.querySelector(".drag-options").append(...draggables);
+    checkBtn.style.display = "none";
+  });
+});

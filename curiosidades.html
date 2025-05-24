@@ -207,82 +207,97 @@
         </article>
       </section>
 
-      <section class="space-trivia">
-        <h2>Autoevaluación Espacial</h2>
+      <section class="drag-eval-section">
+        <h2 class="drag-title">
+          Evaluación Interactiva: ¿Qué sabés de los planetas?
+        </h2>
+        <p class="drag-subtitle">
+          Arrastrá el nombre de cada planeta a la descripción que le
+          corresponde.
+        </p>
 
-        <!-- Pregunta 1 -->
-        <div class="trivia-question">
-          <p>
-            <strong>¿Cuál es el planeta más caliente del sistema solar?</strong>
-          </p>
-          <ul>
-            <li onclick="checkAnswer(this, false)">Mercurio</li>
-            <li onclick="checkAnswer(this, true)">Venus</li>
-            <li onclick="checkAnswer(this, false)">Júpiter</li>
-          </ul>
-          <p class="trivia-feedback"></p>
+        <div class="drag-container">
+          <!-- Planetas -->
+          <div class="drag-options">
+            <div class="draggable" draggable="true" data-planet="mercurio">
+              Mercurio
+            </div>
+            <div class="draggable" draggable="true" data-planet="venus">
+              Venus
+            </div>
+            <div class="draggable" draggable="true" data-planet="tierra">
+              Tierra
+            </div>
+            <div class="draggable" draggable="true" data-planet="marte">
+              Marte
+            </div>
+            <div class="draggable" draggable="true" data-planet="jupiter">
+              Júpiter
+            </div>
+            <div class="draggable" draggable="true" data-planet="saturno">
+              Saturno
+            </div>
+            <div class="draggable" draggable="true" data-planet="urano">
+              Urano
+            </div>
+            <div class="draggable" draggable="true" data-planet="neptuno">
+              Neptuno
+            </div>
+          </div>
+
+          <!-- Descripciones -->
+          <div class="drop-areas">
+            <div class="dropzone" data-correct="tierra">
+              <span class="drop-label"
+                >Único con vida, atmósfera rica en oxígeno y agua líquida.</span
+              >
+            </div>
+            <div class="dropzone" data-correct="mercurio">
+              <span class="drop-label"
+                >El más cercano al Sol, sin atmósfera significativa.</span
+              >
+            </div>
+            <div class="dropzone" data-correct="venus">
+              <span class="drop-label"
+                >Similar en tamaño a la Tierra, pero con atmósfera tóxica y muy
+                caliente.</span
+              >
+            </div>
+            <div class="dropzone" data-correct="marte">
+              <span class="drop-label"
+                >Conocido como el planeta rojo, objetivo de futuras misiones
+                humanas.</span
+              >
+            </div>
+            <div class="dropzone" data-correct="jupiter">
+              <span class="drop-label"
+                >El planeta más grande, con una gran mancha roja y muchas
+                lunas.</span
+              >
+            </div>
+            <div class="dropzone" data-correct="saturno">
+              <span class="drop-label"
+                >Famoso por sus anillos visibles compuestos de hielo y
+                rocas.</span
+              >
+            </div>
+            <div class="dropzone" data-correct="urano">
+              <span class="drop-label"
+                >Gira acostado y tiene un tono azul verdoso debido al
+                metano.</span
+              >
+            </div>
+            <div class="dropzone" data-correct="neptuno">
+              <span class="drop-label"
+                >El más lejano, de color azul intenso, con los vientos más
+                rápidos.</span
+              >
+            </div>
+          </div>
         </div>
 
-        <!-- Pregunta 2 -->
-        <div class="trivia-question">
-          <p>
-            <strong
-              >¿Qué misión llevó al ser humano por primera vez a la
-              Luna?</strong
-            >
-          </p>
-          <ul>
-            <li onclick="checkAnswer(this, false)">Apollo 10</li>
-            <li onclick="checkAnswer(this, true)">Apollo 11</li>
-            <li onclick="checkAnswer(this, false)">Voyager 1</li>
-          </ul>
-          <p class="trivia-feedback"></p>
-        </div>
-
-        <!-- Pregunta 3 -->
-        <div class="trivia-question">
-          <p>
-            <strong>¿Cuál de estos no es un planeta del sistema solar?</strong>
-          </p>
-          <ul>
-            <li onclick="checkAnswer(this, false)">Neptuno</li>
-            <li onclick="checkAnswer(this, false)">Urano</li>
-            <li onclick="checkAnswer(this, true)">Plutón</li>
-          </ul>
-          <p class="trivia-feedback"></p>
-        </div>
-
-        <!-- Pregunta 4 -->
-        <div class="trivia-question">
-          <p>
-            <strong
-              >¿Qué planeta posee un sistema de anillos visible desde la
-              Tierra?</strong
-            >
-          </p>
-          <ul>
-            <li onclick="checkAnswer(this, false)">Júpiter</li>
-            <li onclick="checkAnswer(this, false)">Neptuno</li>
-            <li onclick="checkAnswer(this, true)">Saturno</li>
-          </ul>
-          <p class="trivia-feedback"></p>
-        </div>
-
-        <!-- Pregunta 5 -->
-        <div class="trivia-question">
-          <p>
-            <strong
-              >¿Qué sonda es el objeto más lejano construido por el ser
-              humano?</strong
-            >
-          </p>
-          <ul>
-            <li onclick="checkAnswer(this, true)">Voyager 1</li>
-            <li onclick="checkAnswer(this, false)">Curiosity</li>
-            <li onclick="checkAnswer(this, false)">New Horizons</li>
-          </ul>
-          <p class="trivia-feedback"></p>
-        </div>
+        <button class="check-btn">Ver resultados</button>
+        <button class="reset-btn">Reiniciar</button>
       </section>
     </main>
 
