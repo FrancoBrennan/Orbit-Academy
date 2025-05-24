@@ -2,47 +2,68 @@ document.addEventListener("DOMContentLoaded", () => {
   const draggables = document.querySelectorAll(".draggable");
   const dropzones = document.querySelectorAll(".dropzone");
   const checkBtn = document.querySelector(".check-btn");
+  const resetBtn = document.querySelector(".reset-btn");
+  const dragContainer = document.querySelector(".drag-options");
 
   let dragged = null;
+  let selectedItem = null;
+  const isMobile = window.innerWidth <= 992;
 
-  // Iniciar drag
-  draggables.forEach((item) => {
-    item.addEventListener("dragstart", () => {
-      dragged = item;
-    });
-  });
-
-  // Permitir soltar
-  dropzones.forEach((zone) => {
-    zone.addEventListener("dragover", (e) => {
-      e.preventDefault();
+  // DRAG & DROP para escritorio
+  if (!isMobile) {
+    draggables.forEach((item) => {
+      item.addEventListener("dragstart", () => {
+        dragged = item;
+      });
     });
 
-    zone.addEventListener("drop", () => {
-      if (dragged) {
-        // Restaurar solo el texto original
-        const label = zone.querySelector(".drop-label");
-        zone.innerHTML = label ? label.outerHTML : "";
-        zone.appendChild(dragged);
+    dropzones.forEach((zone) => {
+      zone.addEventListener("dragover", (e) => e.preventDefault());
 
-        checkIfComplete();
-      }
+      zone.addEventListener("drop", () => {
+        if (dragged) {
+          const label = zone.querySelector(".drop-label");
+          zone.innerHTML = label ? label.outerHTML : "";
+          zone.appendChild(dragged);
+          checkIfComplete();
+        }
+      });
     });
-  });
+  }
 
-  // Verificar si todas las zonas están ocupadas
+  // TAP + TAP para móviles
+  if (isMobile) {
+    draggables.forEach((item) => {
+      item.addEventListener("click", () => {
+        if (selectedItem) {
+          selectedItem.classList.remove("selected");
+        }
+        selectedItem = item;
+        item.classList.add("selected");
+      });
+    });
+
+    dropzones.forEach((zone) => {
+      zone.addEventListener("click", () => {
+        if (selectedItem && !zone.querySelector(".draggable")) {
+          const label = zone.querySelector(".drop-label");
+          zone.innerHTML = label ? label.outerHTML : "";
+          zone.appendChild(selectedItem);
+          selectedItem.classList.remove("selected");
+          selectedItem = null;
+          checkIfComplete();
+        }
+      });
+    });
+  }
+
   function checkIfComplete() {
     const filled = Array.from(dropzones).every((zone) =>
       zone.querySelector(".draggable")
     );
-    if (filled) {
-      checkBtn.style.display = "inline-block";
-    } else {
-      checkBtn.style.display = "none";
-    }
+    checkBtn.style.display = filled ? "inline-block" : "none";
   }
 
-  // Evaluar respuestas
   checkBtn.addEventListener("click", () => {
     dropzones.forEach((zone) => {
       const correct = zone.getAttribute("data-correct");
@@ -58,8 +79,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  const resetBtn = document.querySelector(".reset-btn");
-
   resetBtn.addEventListener("click", () => {
     dropzones.forEach((zone) => {
       const label = zone.querySelector(".drop-label");
@@ -67,7 +86,9 @@ document.addEventListener("DOMContentLoaded", () => {
       zone.classList.remove("correct", "incorrect");
     });
 
-    document.querySelector(".drag-options").append(...draggables);
+    dragContainer.append(...draggables);
+    draggables.forEach((el) => el.classList.remove("selected"));
     checkBtn.style.display = "none";
+    selectedItem = null;
   });
 });
