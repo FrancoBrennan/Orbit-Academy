@@ -568,7 +568,7 @@ footer p {
 
 .info-temas {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 4vh 5vw;
   align-items: center;
   background-color: #ffffff;
@@ -2233,7 +2233,7 @@ footer p {
     transform: scale(1.1); /* Zoom al pasar el cursor */
   }
 
-  .mission-info {
+  .info-temas {
     flex-direction: row;
     justify-content: space-between;
   }
