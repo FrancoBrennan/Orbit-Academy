@@ -547,52 +547,28 @@ footer p {
   background-image: url("./assets/voyager\ 1.webp");
 }
 
-/* universo.html */
+/* General */
 
-/* misiones.html */
-
-/* sistemasolar.html */
-
-/* curiosidades.html */
-
-.missions-section {
-  position: relative;
-  height: 100vh;
-  background-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0)
-    ),
-    url("/assets/curiosidades.jpg");
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  padding-left: 5vw;
-  color: white;
-}
-
-.missions-text {
+.text-temas {
   max-width: 600px;
   z-index: 2;
 }
 
-.missions-text h1 {
+.text-temas h1 {
   font-size: 3rem;
   font-weight: bold;
   margin-bottom: 1rem;
 }
 
-.missions-text p {
+.text-temas p {
   font-size: 1.1rem;
   margin-bottom: 1.5rem;
   line-height: 1.5;
 }
 
-.mission-info {
+.info-temas {
   display: flex;
-  flex-direction: column;
-
+  flex-direction: row;
   padding: 4vh 5vw;
   align-items: center;
   background-color: #ffffff;
@@ -617,14 +593,6 @@ footer p {
 .text-content p {
   margin-bottom: 1rem;
   line-height: 1.5;
-}
-
-.mission-link {
-  display: inline-block;
-  font-weight: bold;
-  text-decoration: none;
-  color: #000;
-  margin-top: 1rem;
 }
 
 .image-content figure {
@@ -652,6 +620,119 @@ footer p {
 
 .alt-bg {
   background-color: #f9f9f9;
+}
+
+/* universo.html */
+
+.universe-section {
+  position: relative;
+  height: 100vh;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0)
+    ),
+    url("/assets/universo.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding-left: 5vw;
+  color: white;
+}
+
+/*
+.mission-link {
+  display: inline-block;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+  margin-top: 1rem;
+}
+*/
+
+.video-section {
+  background-color: #f0f4f8;
+  padding: 6vh 5vw 4vh;
+  text-align: center;
+}
+
+.video-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+.video-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.video-container p {
+  font-size: 1rem;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.video-wrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.video-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+/* misiones.html */
+
+.missions-section {
+  position: relative;
+  height: 100vh;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0)
+    ),
+    url("/assets/gateway-with-earth-in-background.webp");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding-left: 5vw;
+  color: white;
+}
+
+.alt-bg {
+  background-color: #f9f9f9;
+}
+
+#apollo11 {
+  margin-top: 6vh;
+}
+
+#iss {
+  padding-bottom: 10vh;
+}
+
+/* sistemasolar.html */
+
+.missions-section {
+  position: relative;
+  height: 100vh;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0)
+    ),
+    url("assets/sistema\ solar.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding-left: 5vw;
+  color: white;
 }
 
 .video-section {
@@ -708,6 +789,106 @@ footer p {
   font-size: 1.2rem;
   max-width: 800px;
   margin: 0 auto;
+}
+
+/* === Esquema visual === */
+.solar-scheme {
+  text-align: center;
+  padding: 5vh 5vw;
+}
+
+.solar-scheme-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #5298d3;
+  margin-bottom: 0.5rem;
+}
+
+.solar-scheme-text {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 2rem auto;
+  color: #444;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* === Grilla de planetas === */
+.planet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  padding: 5vh 5vw;
+}
+
+.planet-card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.planet-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.planet-card h3 {
+  margin-top: 1rem;
+  font-size: 1.4rem;
+  color: #5298d3;
+}
+
+.planet-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+.planet-section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: #5298d3;
+  margin-top: 6vh;
+  margin-bottom: 2vh;
+  margin-left: 4vw;
+}
+
+.planet-card img {
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+.moon-section {
+  margin: 7vh 0;
+}
+
+.star-section {
+  margin-top: 7vh;
+}
+
+/* curiosidades.html */
+
+.curiosidades-section {
+  position: relative;
+  height: 100vh;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0)
+    ),
+    url("/assets/curiosidades.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  padding-left: 5vw;
+  color: white;
 }
 
 /* === Esquema visual === */
@@ -1499,6 +1680,28 @@ footer p {
     margin-bottom: 5vh;
     justify-items: center;
   }
+
+  .image-content img {
+    width: 60vw;
+    height: auto;
+  }
+
+  h1 {
+    font-size: 1.8rem !important;
+  }
+
+  p {
+    font-size: 0.9rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  .solar-scheme img {
+    width: 80vw;
+    border-radius: 10px;
+  }
 }
 
 @media screen and (min-width: 424px) {
@@ -2058,6 +2261,15 @@ footer p {
     grid-template-columns: 1fr 1fr 1fr;
     gap: 1.2rem;
     max-height: 40vh;
+  }
+
+  .image-content img {
+    width: 45vw;
+    height: auto;
+  }
+
+  .solar-scheme img {
+    width: 60vw;
   }
 }
 
