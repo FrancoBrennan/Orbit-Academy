@@ -241,20 +241,6 @@ p {
   border-radius: 10px;
 }
 
-.tablets {
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent),
-    url("/assets/TABLETS\ 2.jpg");
-  width: 100%;
-  height: 30vh;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  color: white;
-  border-radius: 10px;
-}
-
 /* -------------- */
 
 .categories-container {
