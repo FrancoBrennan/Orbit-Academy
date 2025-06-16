@@ -19,6 +19,10 @@
       href="https://fonts.googleapis.com/css2?family=Exo+2&family=Open+Sans&family=Orbitron&display=swap"
       rel="stylesheet"
     />
+
+    <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">    
   </head>
   <body>
     <header id="Header">
@@ -36,11 +40,13 @@
         </button>
 
         <ul class="nav-list">
+
           <li class="active-menu"><a href="/index.html">Inicio</a></li>
           <li><a href="/universo.html">Universo</a></li>
           <li><a href="/misiones.html">Misiones</a></li>
           <li><a href="/sistemasolar.html">Sistema Solar</a></li>
           <li><a href="/curiosidades.html">Curiosidades</a></li>
+
         </ul>
       </nav>
     </header>
@@ -66,19 +72,68 @@
             la magnitud y transformación del universo a lo largo del tiempo.
           </p>
 
-          <div class="video-wrapper">
-            <iframe
-              width="560"
-              height="315"
-              src="https://www.youtube.com/embed/7w0rvwE9FXA?si=oj50-UI5om_sp6jT"
-              title="La increíble evolución del universo"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              referrerpolicy="strict-origin-when-cross-origin"
-              allowfullscreen
-            ></iframe>
-          </div>
+          <div class="marco-reproductor">
+
+           <ul id="themeSelector">
+              <li id="themeButton">
+                <span id="themeIcon" class="material-icons">light_mode</span>
+              </li>
+            </ul>
+
+          <video id="medio">
+            <source src="assets/La increíble evolución del universo en solo 10 minutos [7w0rvwE9FXA].mp4">
+        </video>
+        <nav class="nav-video">
+            <div id="botones">
+                <button type="button" id="play"><span class="material-icons">
+                play_circle
+                </span></button>
+                
+                <button type="button" id="pause"><span class="material-icons">
+                pause_circle
+                </span></button>
+
+                <button type="button" id="restart">
+                    <span class="material-icons">restart_alt</span>
+                </button>
+
+                
+                <button type="button" id="replay10"><span class="material-icons">
+                replay_10
+                </span></button>
+                
+                <button type="button" id="forward10"><span class="material-icons">
+                forward_10
+                </span></button>
+                
+                <button type="button" id="volUp"><span class="material-icons">
+                volume_up
+                </span></button>
+                
+                <button type="button" id="volDown"><span class="material-icons">
+                    volume_down
+                    </span></button>
+                
+                <button type="button" id="volMute"><span class="material-icons">
+                    volume_off
+                    </span></button>
+
+                <button type="button" id="speed">
+                    <span class="material-icons">fast_forward</span>
+                </button>
+
+            </div>
+            <div id="barra">
+                <div id="progreso"></div>
+            </div>
+            <div style="clear: both"></div>
+        </nav>
+
         </div>
+
+        </div>
+
+        
       </section>
 
       <section class="info-temas">
@@ -242,6 +297,7 @@
 
     <script src="./main.js"></script>
     <script src="./scroll.js"></script>
+    <script src="./reproductor.js"></script>
     <script
       src="https://kit.fontawesome.com/1cb579b6ec.js"
       crossorigin="anonymous"

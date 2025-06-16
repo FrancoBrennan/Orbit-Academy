@@ -697,17 +697,176 @@ footer p {
   margin-bottom: 2rem;
 }
 
-.video-wrapper {
-  width: 100%;
-  aspect-ratio: 16 / 9;
+/* REPRODUCTOR */
+
+/* === Variables para el reproductor === */
+:root {
+  --colorFondoClaro: #ffffff;  /* Azul pálido */
+  --colorPrimarioClaro: #479aa8;
+  --colorSecundarioClaro: #0b5562;
+  --botonClaro: #333;
+
+  --colorFondoOscuro: #1e1e1e;
+  --colorPrimarioOscuro: #557a95;
+  --colorSecundarioOscuro: #88c0d0;
+  --botonOscuro: #ddd;
 }
 
-.video-wrapper iframe {
-  width: 100%;
-  height: 100%;
+/* === Tema aplicado al marco del reproductor === */
+.marco-reproductor.tema-oscuro {
+  background-color: var(--colorFondoOscuro);
+  color: white;
   border-radius: 10px;
-  border: none;
+  padding: 15px;
 }
+
+.marco-reproductor.tema-oscuro #barra {
+  background-color: var(--colorPrimarioOscuro);
+}
+
+.marco-reproductor.tema-oscuro #progreso {
+  background-color: var(--colorSecundarioOscuro);
+}
+
+.marco-reproductor.tema-oscuro #botones button {
+  color: var(--botonOscuro);
+}
+
+.marco-reproductor.tema-claro {
+  background-color: var(--colorFondoClaro);
+  color: black;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+.marco-reproductor.tema-claro #barra {
+  background-color: var(--colorPrimarioClaro);
+}
+
+.marco-reproductor.tema-claro #progreso {
+  background-color: var(--colorSecundarioClaro);
+}
+
+.marco-reproductor.tema-claro #botones button {
+  color: var(--botonClaro);
+}
+
+
+.video-section {
+  padding: 20px;
+}
+
+.video-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 10px;
+  text-align: center;
+}
+
+video {
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin: auto;
+}
+
+.nav-video {
+  margin: 10px auto;
+  width: 100%;
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#botones {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+#barra {
+  width: 100%;
+  max-width: 700px;
+  height: 12px;
+  background-color: var(--colorPrimarioClaro);
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 10px auto;
+}
+
+#progreso {
+  height: 100%;
+  width: 0;
+  background-color: var(--colorSecundarioClaro);
+  transition: width 0.2s linear;
+}
+
+#botones button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: var(--botonClaro);
+  transition: transform 0.2s;
+}
+
+#botones button:hover {
+  transform: scale(1.2);
+}
+
+.oculto {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.visible {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+#themeSelector {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 10px 0;
+  display: flex;
+  justify-content: center;
+}
+
+#themeButton {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+
+@media screen and (max-width: 600px) {
+  .video-container h2,
+  .video-container p {
+    padding: 0 10px;
+    font-size: 1rem;
+  }
+
+  #botones {
+    justify-content: center;
+  }
+
+  #botones button {
+    font-size: 20px;
+  }
+
+  #barra {
+    height: 10px;
+  }
+}
+
+
+
 
 /* misiones.html */
 
