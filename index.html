@@ -54,32 +54,16 @@
     <main>
 
 
-      <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="/assets/tierra desde el espacio 3.jpg" class="d-block w-100" alt="Planeta Tierra">
+      <div class="carousel">
+          <div class="carousel-images" id="carouselImages">
+            <img src="/assets/tierra desde el espacio 3.jpg" alt="Planeta Tierra">
+            <img src="/assets/54492396655-c6ba83df1d-o.jpg" alt="Astronauta">
+            <img src="/assets/pexels-pixabay-2166.jpg" alt="Cohete Espacial">
+            <img src="/assets/cometa.webp" alt="Cometa">
           </div>
-          <div class="carousel-item">
-            <img src="/assets/54492396655-c6ba83df1d-o.jpg" class="d-block w-100" alt="Astronauta">
-          </div>
-          <div class="carousel-item">
-            <img src="/assets/pexels-pixabay-2166.jpg" class="d-block w-100" alt="Cohete Espacial">
-          </div>
-          <div class="carousel-item">
-            <img src="/assets/cometa.webp" class="d-block w-100" alt="Cometa">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+          <button class="prev" onclick="prevSlide()">❮</button>
+          <button class="next" onclick="nextSlide()">❯</button>
       </div>
-
-    </div>
       
       <section class="categorias">
   <h2>Explorá el Conocimiento</h2>
@@ -296,10 +280,14 @@
 
     </footer>
 
-    
+    <script>
+      
+</script>
+
     
     <script src="./main.js"></script>
     <script src="./scroll.js"  ></script>
+    <script src="./carousel.js"></script>
     <script src="https://kit.fontawesome.com/1cb579b6ec.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
